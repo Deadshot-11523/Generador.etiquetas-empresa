@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container-multi {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 900px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.producto-item {
+    display: flex;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.campo-ancho {
+    flex: 2;
+}
+
+.campo-corto {
+    max-width: 90px;
+}
+
+.campo-btn {
+    max-width: 40px;
+    justify-content: flex-end;
+}
+
+label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.acciones-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-agregar {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-agregar:hover {
+    background-color: #0056b3;
+}
+
+.btn-submit {
+    flex: 1;
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Caja principal de la etiqueta */
+.etiqueta-box {
+    width: 7cm;
+    height: 3cm;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    overflow: hidden;
+    page-break-inside: avoid;
+}
+
+.borde-ekipment { border: 3px solid #d4a017; }
+.borde-hoverd   { border: 3px solid #8cc63f; }
+.borde-atp      { border: 3px solid #0056b3; }
+.borde-proyectos{ border: 3px solid #e67e22; }
+
+/* Sección izquierda con los datos */
+.info-seccion {
+    flex: 1;
+    height: 100%;
+    padding: 2mm 3mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.nombre-producto {
+    font-weight: bold;
+    font-size: 8.5pt;
+    line-height: 1.1;
+    color: #000;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    max-height: 1.3cm;
+    overflow: hidden;
+}
+
+/* Pie de la etiqueta (Precio a la izq, Código a la der) */
+.pie-etiqueta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+.precio-producto {
+    font-weight: bold;
+    font-size: 10pt;
+    color: #000 !important;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.codigo-producto {
+    font-weight: bold;
+    font-size: 10pt;
+    color: #000 !important;
+    text-align: right;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Sección derecha con el logo */
+.logo-seccion {
+    width: 1.8cm;
+    height: 100%;
+    background-color: #000 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo-seccion img {
+    max-width: 2.6cm;
+    max-height: 1.5cm;
+    transform: rotate(-90deg);
+    object-fit: contain;
+}
+
+/* Contenedor impresiones múltiples */
+.impresion-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4mm;
+    justify-content: flex-start;
+}
+
+/* Reglas de Impresión */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    @page {
+        margin: 0.5cm;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .impresion-contenedor {
+        gap: 2mm;
+    }
+}

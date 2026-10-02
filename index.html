@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador Múltiple de Etiquetas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<!-- Vista del Formulario -->
+<div id="vista-formulario" class="form-container-multi">
+    <h2>Generador de Etiquetas Múltiples</h2>
+
+    <form onsubmit="generarEtiquetas(event)">
+        <div id="lista-productos">
+            <div class="producto-item">
+                <div class="campo">
+                    <label>Empresa:</label>
+                    <select name="empresa" required>
+                        <option value="ekipment.jpg">EKIPMENT</option>
+                        <option value="Hoverd.jpg">HOVERD</option>
+                        <option value="ATP.jpg">A.T.P.</option>
+                        <option value="ProyectosIngenieria.jpg">PROYECTOS DE INGENIERÍA</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label>Código:</label>
+                    <input type="text" name="codigo" placeholder="Ej: RNT-34.12" required>
+                </div>
+
+                <div class="campo campo-ancho">
+                    <label>Nombre del Producto:</label>
+                    <input type="text" name="nombre" placeholder="Ej: INTERRUPTOR DE VIBRADOR" required>
+                </div>
+
+                <div class="campo campo-corto">
+                    <label>Precio:</label>
+                    <input type="text" name="precio" placeholder="Ej: Q. 150.00">
+                </div>
+
+                <div class="campo campo-corto">
+                    <label>Cant:</label>
+                    <input type="number" name="cantidad" min="1" value="1" required>
+                </div>
+
+                <div class="campo campo-btn">
+                    <label>&nbsp;</label>
+                    <button type="button" class="btn-eliminar" onclick="eliminarFila(this)" style="display:none;">✕</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="acciones-form">
+            <button type="button" class="btn-agregar" onclick="agregarProducto()">+ Agregar otro producto</button>
+            <button type="submit" class="btn-submit">Generar e Imprimir Todas las Etiquetas</button>
+        </div>
+    </form>
+</div>
+
+<!-- Vista de Impresión -->
+<div id="vista-impresion" style="display: none; padding: 20px;">
+    <button type="button" class="btn-agregar no-print" onclick="volverAlFormulario()" style="margin-bottom: 20px;">
+        ← Volver al formulario
+    </button>
+    <div id="contenedor-etiquetas" class="impresion-contenedor"></div>
+</div>
+
+<script src="guardar.js"></script>
+
+</body>
+</html>
