@@ -1,0 +1,2 @@
+# Generador.etiquetas-empresa
+generador
